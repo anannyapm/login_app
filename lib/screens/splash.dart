@@ -31,22 +31,27 @@ class _ScreenSplashState extends State<ScreenSplash> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+          
           image: DecorationImage(
-              image: AssetImage('assets/images/layered-waves-haikei.png'),
-              fit: BoxFit.cover)),
+              image: AssetImage('assets/images/bg.jpg'),
+              fit: BoxFit.cover,
+              )),
       child: Scaffold(
           backgroundColor: Colors.transparent,
-          body: Container(
-            margin: EdgeInsets.all(40),
-            child: Column(
-              children: [
-                Image.asset('assets/images/LogoFull.png'),
-                Text(
-                  'Lets Connect with Freedom . . .',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
-                ),
-              ],
-              mainAxisAlignment: MainAxisAlignment.center,
+          body: Padding(
+            padding: const EdgeInsets.only(top: 70),
+            child: Container(
+              width: double.infinity,
+              margin: EdgeInsets.all(30),
+              child: Column(
+                children: [
+                  Image.asset('assets/images/arcticons_plantnet.png'),
+                  Image.asset('assets/images/PhytoTech.png'),
+                  
+                ],
+                
+                crossAxisAlignment: CrossAxisAlignment.center,
+              ),
             ),
           )),
     );

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -14,7 +16,23 @@ class ScreenLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    MaterialColor mycolor = MaterialColor(0xFF161C1C, <int, Color>{
+      50: Color(0xFF161C1C),
+      100: Color(0xFF161C1C),
+      200: Color(0xFF161C1C),
+      300: Color(0xFF161C1C),
+      400: Color(0xFF161C1C),
+      500: Color(0xFF161C1C),
+      600: Color(0xFF161C1C),
+      700: Color(0xFF161C1C),
+      800: Color(0xFF161C1C),
+      900: Color(0xFF161C1C),
+    },
+  );
+
     return Scaffold(
+      
       body: SafeArea(
         child: Form(
           key: _formKey,
@@ -22,13 +40,16 @@ class ScreenLogin extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
+                
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextFormField(
+                    style: TextStyle(fontFamily: 'OpenSans'),
                     controller: _usernameController,
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Username',
+                      
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -42,11 +63,13 @@ class ScreenLogin extends StatelessWidget {
                     height: 20,
                   ),
                   TextFormField(
+                    style: TextStyle(fontFamily: 'OpenSans'),
                       controller: _passwordController,
                       obscureText: true,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Password',
+                
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -67,10 +90,12 @@ class ScreenLogin extends StatelessWidget {
                       }
                     },
                     icon: Icon(Icons.check),
-                    label: Text('Login'),
+                    label: Text('Login',style: TextStyle(fontFamily: 'OpenSans'),),
                   )
                 ],
               ),
+    
+              
             ),
           ),
         ),
